@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class indexController extends Controller
 {
     public function index(){
-        echo "Home Page";
+        echo '<a href="'.route('index').'">Home Page<br></a>';
+        echo '<a href="'.route('admin.index').'">Admin</a>';
+
     }
 }

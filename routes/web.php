@@ -2,18 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::group(['namespace'=>'front'],function(){
+    Route::get('/','indexController@index')->name('index');
+});
 
-Route::group(['namespace'=>'admin','prefix'=>'admin'],function(){
-        Route::get('/','indexController@index');
-      Route::group(['namespace'=>'user','prefix'=>'user'],function(){
-        Route::get('/add','indexController@adduser');
+Route::group(['namespace'=>'admin','prefix'=>'admin', 'as'=>'admin.'],function(){
+        Route::get('/','indexController@index')->name('index');
+      Route::group(['namespace'=>'user','prefix'=>'user','as'=>'user.'],function(){
+        Route::get('/add','indexController@adduser')->name('add');
       });
 });
 
 
-Route::group(['namespace'=>'front'],function(){
-    Route::get('/','indexController@index');
-});
 
 
 

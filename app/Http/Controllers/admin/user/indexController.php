@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class indexController extends Controller
 {
     public function adduser(){
-        echo '<a href="/Lessons/laravel-lesson/public/admin">Admin</a>';
+        echo '<a href="'.route('admin.index').'">Admin</a>';
             echo '<br>add user page';
     }
 }

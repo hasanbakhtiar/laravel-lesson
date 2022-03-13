@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 class indexController extends Controller
 {
     public function index(){
-        echo '<a href="'.route('index').'">Home Page<br></a>';
-        echo '<a href="'.route('admin.index').'">Admin</a>';
+        $data = ['name'=>'Hasan','surname' => 'Bakhtiar',"info"=>["age"=>'24','job'=>'Full Stack']];
+        // return view('index',$data);
+        return view('index',['age'=>15]);
 
     }
 }

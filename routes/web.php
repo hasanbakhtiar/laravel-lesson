@@ -5,9 +5,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/users',function(){
     // echo 'user lists';
     // $users = \Illuminate\Support\Facades\DB::table('users')->get();
-    $users = \Illuminate\Support\Facades\DB::table('users')->first();
-    echo $users->name;
-    // dd($users);
+    // $users = \Illuminate\Support\Facades\DB::table('users')->first();
+    // $users = \Illuminate\Support\Facades\DB::table('users')->first();
+    // $users = \Illuminate\Support\Facades\DB::table('users')->where('id','=',1)->get();
+    $users = \Illuminate\Support\Facades\DB::table('users')->pluck('surname');
+    // echo $users->name;
+    dd($users);
     // foreach ($users as $key => $value) {
     //   echo $value->id."=>".$value->name."<br>";
     // }

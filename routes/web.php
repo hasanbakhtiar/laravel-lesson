@@ -10,7 +10,7 @@ Route::get('/users',function(){
     // $users = \Illuminate\Support\Facades\DB::table('users')->where('id','=',1)->get();
     $users = \Illuminate\Support\Facades\DB::table('users')->pluck('surname');
     // echo $users->name;
-    dd($users);
+    // dd($users);
     // foreach ($users as $key => $value) {
     //   echo $value->id."=>".$value->name."<br>";
     // }

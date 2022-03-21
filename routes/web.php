@@ -2,18 +2,78 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
+
+
+
+
+Route::get('/dbtest',function(){
+  Illuminate\Support\Facades\DB::table('users')->orderBy('id')->chunk(3,function($users){
+    echo '<div class="row" style="border:1px solid red; padding:10px;">';
+    foreach($users as $user){
+      echo '<div class="col-md-4">'.$user->name.'</div>';
+    }
+    echo '</div>';
+    // dd($users);
+  });
+});
+
 Route::get('/users',function(){
     // echo 'user lists';
+
+ 
+    // $users = \Illuminate\Support\Facades\DB::table('users')->select(['id','name'])->get();
+    // $users = \Illuminate\Support\Facades\DB::table('users')->where('id','=',1)->exists();
+    // $users = \Illuminate\Support\Facades\DB::table('users')->max('age');
+    // $users = \Illuminate\Support\Facades\DB::table('users')->sum('age');
+    // $users = \Illuminate\Support\Facades\DB::table('users')->avg('age');
+    // $users = \Illuminate\Support\Facades\DB::table('users')->min('age');
     // $users = \Illuminate\Support\Facades\DB::table('users')->get();
     // $users = \Illuminate\Support\Facades\DB::table('users')->first();
     // $users = \Illuminate\Support\Facades\DB::table('users')->first();
     // $users = \Illuminate\Support\Facades\DB::table('users')->where('id','=',1)->get();
-    $users = \Illuminate\Support\Facades\DB::table('users')->pluck('surname');
+    // $users = \Illuminate\Support\Facades\DB::table('users')->pluck('surname');
     // echo $users->name;
     // dd($users);
     // foreach ($users as $key => $value) {
     //   echo $value->id."=>".$value->name."<br>";
     // }
+
+
+
+
+   // $users = \Illuminate\Support\Facades\DB::table('users')->insert([
+    //   ['name'=>'Elsad','surname'=>'Aliyev','age'=>22],
+    //   ['name'=>'Fezo','surname'=>'Jhon','age'=>32]
+    // ]);
+    // $users = \Illuminate\Support\Facades\DB::table('users')
+    // ->orWhere('id','=',1)
+    // ->orWhere('id','=',4)
+    // ->get();
+
+    $users = \Illuminate\Support\Facades\DB::table('users')
+    // ->whereIn('id',[1,4])
+    // ->whereNotIn('id',[1,4])
+    // ->groupBy('age')
+    // ->having('age','>',20)
+    // ->inRandomOrder()
+    // ->limit(1)
+    // ->orderBy('id','desc')
+    // ->having('age','>',20)
+    ->truncate();
+    // ->get();
+    // $users = \Illuminate\Support\Facades\DB::table('users')->where('id','=','5')->delete();
+    // $users = \Illuminate\Support\Facades\DB::table('users')->where('id','=','5')->update(['age'=>20]);
+        // $users = \Illuminate\Support\Facades\DB::table('users')->insert(
+        //   ['name'=>'Elsad','surname'=>'Aliyev','age'=>22]
+        // );
+
+    // dd($users);
+
+    // echo $users;
+
+
 
 });
 

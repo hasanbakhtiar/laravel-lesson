@@ -1,23 +1,43 @@
 <?php
 
+use App\Book;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/books', function () {
 
 
-  $x = \App\Auther::find(1)->book;
-  foreach($x as $key=>$value){
-   echo $value['name']."<br>";
-  }
+  $x = \App\User::find(1);
+  // echo $x->name." ".$x->surname;
+  echo $x->full_name;
 
 
 
-  
+
+  // \App\Book::create(['name'=>'donuz fermasi','autherid'=>1]);
+  // $x = \App\Book::find(1);
+  // $firstName = $x->name;
+  // echo $firstName;
 
 
-  
-  
+
+  // $x = \App\Auther::find(1)->book;
+  // $x = \App\Auther::find(1)->bookbuy;
+  // foreach($x as $key => $value){
+  //   echo $value['code']."<br>";
+  // }
+  // dd($x);
+  // foreach($x as $key=>$value){
+  //  echo $value['name']."<br>";
+  // }
+
+
+
+
+
+
+
+
 
 
   // $book = \App\Book::updateOrCreate(

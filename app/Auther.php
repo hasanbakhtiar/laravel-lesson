@@ -10,4 +10,7 @@ class Auther extends Model
      return $this->hasMany('\App\Book','autherid','id');
     //  return $this->belongsTo('\App\Book','id','autherid');
     }
+    public function bookbuy(){
+        return $this->belongsToMany('\App\BookBuy','book','autherid','id');
+    }
 }

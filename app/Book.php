@@ -14,6 +14,15 @@ class Book extends Model
     public function auther(){
         return $this->hasOne('\App\Auther','id','autherid');
     }
+    public function setNameAttribute($value){
+            $this->attributes['name'] = strtoupper($value);
+    }
+
+    public function getNameAttribute($value){
+            // return ucfirst($value);
+            // return strtoupper($value);
+            return strtolower($value);
+    }
 
 
 }

@@ -3,13 +3,14 @@
 use App\Book;
 use Illuminate\Support\Facades\Route;
 
-
+// php artisan tinker
 Route::get('/books', function () {
 
 
   $x = \App\User::find(1);
   // echo $x->name." ".$x->surname;
-  echo $x->full_name;
+  // echo $x->full_name;
+  dd($x);
 
 
 
